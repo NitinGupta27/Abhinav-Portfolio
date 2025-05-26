@@ -1,85 +1,244 @@
-<header style="position: relative; padding: 4rem 2rem; text-align: center; background: var(--white); border-bottom: 1px solid var(--silver);">
-  <img src="https://i.postimg.cc/vZJsKGxT/Picsart-25-01-01-12-25-02-445.jpg" alt="Logo" style="width:120px; border-radius:50%; box-shadow:0 0 15px rgba(0,0,0,0.1);">
-  <h1 style="font-size:3.5rem; margin-top:1rem; font-weight:800; color: var(--royal-blue);">Abhinav Gupta</h1>
-  <p style="font-size:1.2rem; color: var(--cool-gray);">Professional Graphic Designer from Uttar Pradesh, India</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abhinav Gupta - Portfolio Header</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --white: #FFFFFF;
+      --ice-blue: #EAF4FF;
+      --royal-blue: #0057D9;
+      --sky-blue: #38BDF8;
+      --midnight-blue: #002B5B;
+      --slate-gray: #4B5563;
+      --light-silver: #D1D5DB;
+      --gold: #D4AF37;
+    }
 
-  <!-- Hamburger icon top right -->
-  <div id="hamburger" aria-label="Menu" tabindex="0" style="
-    font-size: 2.5rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    user-select: none;
-    display: none;
-    color: var(--royal-blue);
-  ">
-    &#9776;
-  </div>
-
-  <!-- Navigation menu -->
-  <nav id="nav-menu" class="hidden" style="
-    position: absolute;
-    top: 5rem;
-    right: 2rem;
-    background: var(--white);
-    width: 220px;
-    border: 1px solid var(--silver);
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    display: none;
-    z-index: 1000;
-  ">
-    <ul style="
-      list-style: none;
-      padding: 1rem;
+    /* Basic reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--midnight-blue);
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(135deg, var(--royal-blue), var(--sky-blue), var(--ice-blue));
+      padding: 2rem 1.5rem 3rem;
+      text-align: center;
+      color: var(--white);
+      border-bottom: 1px solid var(--light-silver);
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      border: 3px solid var(--gold);
+      background: var(--white);
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-top: 1rem;
+      color: var(--white);
+      text-shadow: 0 0 5px var(--midnight-blue);
+    }
+    header p {
+      font-size: 1.2rem;
+      color: var(--sky-blue);
+      margin-top: 0.3rem;
+      font-weight: 600;
+    }
+
+    /* Hamburger Menu Toggle */
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      position: absolute;
+      top: 2.7rem;
+      right: 1.5rem;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
-    ">
-      <li><a href="index.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Home</a></li>
-      <li><a href="about.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">About Me</a></li>
-      <li><a href="projects.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Projects</a></li>
-      <li><a href="services.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Services</a></li>
-      <li><a href="testimonials.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Testimonials</a></li>
-      <li><a href="blog.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Blog</a></li>
-      <li><a href="contact.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Contact</a></li>
-      <li><a href="faq.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">FAQ</a></li>
-      <li><a href="portfolio.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Portfolio</a></li>
-      <li><a href="careers.html" style="color: var(--royal-blue); text-decoration: none; font-weight: 600;">Careers</a></li>
-    </ul>
-  </nav>
-</header>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-
-  hamburger.addEventListener('click', () => {
-    if(navMenu.style.display === 'block'){
-      navMenu.style.display = 'none';
-    } else {
-      navMenu.style.display = 'block';
+      justify-content: space-between;
+      z-index: 101;
     }
-  });
-
-  // Optional: Close menu on link click
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.style.display = 'none';
-    });
-  });
-
-  // Show hamburger only on small screens
-  function checkWidth() {
-    if(window.innerWidth <= 768){
-      hamburger.style.display = 'block';
-    } else {
-      hamburger.style.display = 'none';
-      navMenu.style.display = 'none'; // Hide menu on desktop by default
+    .menu-icon span {
+      display: block;
+      height: 3.5px;
+      background: var(--white);
+      border-radius: 3px;
+      transition: 0.3s ease;
     }
-  }
-  window.addEventListener('resize', checkWidth);
-  window.addEventListener('load', checkWidth);
-</script>
+
+    /* Animate hamburger to X when toggled */
+    #menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Navigation menu */
+    nav.menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 240px;
+      background: var(--ice-blue);
+      border: 1px solid var(--light-silver);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      display: none;
+      flex-direction: column;
+      padding: 1rem 1rem 1.5rem;
+      z-index: 100;
+    }
+    nav.menu a {
+      text-decoration: none;
+      color: var(--midnight-blue);
+      font-weight: 600;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--light-silver);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    nav.menu a:last-child {
+      border-bottom: none;
+    }
+    nav.menu a:hover {
+      background: linear-gradient(135deg, var(--sky-blue), var(--royal-blue));
+      color: var(--white);
+      border-radius: 5px;
+    }
+
+    /* Show menu on toggle */
+    #menu-toggle:checked ~ nav.menu {
+      display: flex;
+    }
+
+    /* Social links inside nav */
+    nav.menu .social-links {
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--light-silver);
+      padding-top: 1rem;
+      text-align: center;
+    }
+    nav.menu .social-links h3 {
+      font-size: 1.25rem;
+      color: var(--midnight-blue);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+    nav.menu .social-links a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.3rem 0.8rem;
+      background: var(--royal-blue);
+      color: var(--white);
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+    nav.menu .social-links a:hover {
+      background: var(--gold);
+      color: var(--midnight-blue);
+    }
+
+    /* Desktop nav override: horizontal menu and always visible */
+    @media(min-width: 768px) {
+      .menu-icon {
+        display: none;
+      }
+      nav.menu {
+        position: static;
+        display: flex !important;
+        width: auto;
+        flex-direction: row;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-top: 1rem;
+        justify-content: center;
+      }
+      nav.menu a {
+        color: var(--white);
+        padding: 0 1rem;
+        border: none;
+      }
+      nav.menu a:hover {
+        background: transparent;
+        color: var(--gold);
+        border-bottom: 2px solid var(--gold);
+        border-radius: 0;
+      }
+      nav.menu .social-links {
+        border: none;
+        padding: 0;
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+      }
+      nav.menu .social-links h3 {
+        display: none;
+      }
+      nav.menu .social-links a {
+        background: var(--gold);
+        color: var(--midnight-blue);
+        margin-left: 0.75rem;
+        padding: 0.35rem 0.8rem;
+      }
+      nav.menu .social-links a:hover {
+        background: var(--sky-blue);
+        color: var(--royal-blue);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.postimg.cc/vZJsKGxT/Picsart-25-01-01-12-25-02-445.jpg" alt="Abhinav Gupta Logo" />
+    <h1>Abhinav Gupta</h1>
+    <p>Professional Graphic Designer from Uttar Pradesh, India</p>
+
+    <!-- Hamburger menu toggle -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Navigation menu -->
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="contact.html">Hire Me</a>
+      <a href="thumbnailz.html">Thumbnailz</a>
+      <a href="logoz.html">Logoz</a>
+      <div class="social-links">
+        <h3>Follow My Socialz</h3>
+        <a href="https://youtube.com/@abhinavguptaofficials" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://discord.com/invite/MGZTfUadYz" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://abhinavguptaofficials.mooo.com/" target="_blank" rel="noopener noreferrer">Website</a>
+      </div>
+    </nav>
+  </header>
+</body>
+</html>
